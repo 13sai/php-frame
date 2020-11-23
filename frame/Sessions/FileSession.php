@@ -10,9 +10,9 @@ class FileSession extends SessionHandler
 
     public function __construct($config)
     {
-        $this->savePath = $config['savePath'];
+        $this->savePath = $config['savePath'] ?? dirname(__FILE__, 5).'/storage/sessions';
         if (!is_dir($this->savePath)) {
-            mkdir($this->savePath, 0777);
+            mkdir($this->savePath, 0777, true);
         }
     }
 

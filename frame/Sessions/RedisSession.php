@@ -9,14 +9,22 @@ class RedisSession extends SessionHandler
     private $redis;
     
     private $lifeTime = 7200;
-    
-    private $config;
 
-    private $prefix = 'SAIAPI_SESSION:';
+    private $prefix = 'SF_SESSION:';
+    
+    private $config = [
+        'host' => '127.0.0.1',
+        'port' => 6379,
+        'auth' => null,
+        'timeout' => 5,
+        'prefix' => 'SF_SESSION:',
+    ];
+
 
     public function __construct($config)
     {
-        $this->config = $config;
+        $this->config = array_merge($this->config, $config);
+        $this->prefix = $this->config['prefix'];
     }
     
     private function getRedisInstance()
@@ -35,7 +43,7 @@ class RedisSession extends SessionHandler
 
     public function read($id)
     {
-        return $this->getRedisInstance()->get($this->prefix.$id);
+        return serialize($this->getRedisInstance()->get($this->prefix.$id));
     }
 
     public function write($id, $data)
