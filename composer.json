@@ -11,6 +11,7 @@
             "email": "sai0556@qq.com"
         }
     ],
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Sai\\Frame\\": "frame/"
