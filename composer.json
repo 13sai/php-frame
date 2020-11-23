@@ -1,0 +1,22 @@
+{
+    "name": "sai/frame",
+    "description": "simple php api framework",
+    "require": {
+        "psr/container": "1.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "13sai",
+            "email": "sai0556@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sai\\Frame\\": "frame/"
+        },
+        "files": [
+            "src/Functions.php"
+        ]
+    }
+}
