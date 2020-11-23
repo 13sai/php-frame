@@ -1,5 +1,5 @@
 {
-    "name": "sai/frame",
+    "name": "sai0556/frame",
     "description": "simple php api framework",
     "require": {
         "psr/container": "1.0.0"
