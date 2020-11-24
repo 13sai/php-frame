@@ -17,7 +17,7 @@
             "Sai\\Frame\\": "frame/"
         },
         "files": [
-            "src/System.php"
+            "frame/Functions.php"
         ]
     }
 }
